@@ -1,6 +1,12 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
+  ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "python" },
+  folding = {
+    enable = true, -- Enable folding
+    indent_levels = 3, -- Number of indent levels to fold
+    indent_guides = true, -- Show indent guides
+    disable = {'json'}, -- Disable folding for specific languages if needed
+  },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

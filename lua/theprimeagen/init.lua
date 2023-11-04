@@ -35,3 +35,15 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+-- vim.g.vimwiki_list = {
+--     { name = "work-wiki", path = "~/vimwiki/work-wiki/" },
+--     { name = "personal-wiki", path = "~/vimwiki/personal-wiki/" },
+--     { name = "linux-wiki", path = "~/vimwiki/linux-wiki/" },
+--     -- Add more wikis if needed
+-- }
+
+function insert_date()
+    local today = os.date("%Y-%m-%d")
+    vim.fn.feedkeys("i" .. today)
+end

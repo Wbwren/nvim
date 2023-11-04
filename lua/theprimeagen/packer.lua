@@ -73,6 +73,12 @@ return require('packer').startup(function(use)
   use("github/copilot.vim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
+  use("vimwiki/vimwiki")
+  use("christoomey/vim-system-copy")
+  use("itmammoth/doorboy.vim")
+  use("airblade/vim-gitgutter")
+  use("tpope/vim-commentary")
+  use("ElPiloto/telescope-vimwiki.tpope/vim-commentarynvim")
 
 end)
 
