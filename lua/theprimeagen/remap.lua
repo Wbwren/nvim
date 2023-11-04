@@ -1,6 +1,6 @@
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -48,4 +48,21 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+vim.api.nvim_set_keymap('n', '<Leader>id', [[:lua insert_date()<CR>]], { noremap = true, silent = true })
+
+-- Function to paste clipboard image into vimwiki
+function paste_clipboard_image()
+  -- Generate a filename based on timestamp
+  local filename = "img_" .. os.date("%Y%m%d_%H%M%S") .. ".png"
+  -- Full path to where you want to store the image
+  local filepath = "~/vimwiki/" .. filename
+  -- Command to get image from clipboard to file (Ubuntu)
+  local cmd = "xclip -selection clipboard -t image/png -o > " .. filepath
+  -- Execute the shell command
+  os.execute(cmd)
+  -- Insert markdown syntax into vimwiki at the cursor position
+  vim.api.nvim_put({filename}, "l", true, true)
+end
+
 
