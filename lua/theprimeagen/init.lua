@@ -41,12 +41,6 @@ vim.g.vimwiki_list = {{
     syntax = 'markdown',
     ext = '.md'
 }}
--- vim.g.vimwiki_list = {
---     { name = "work-wiki", path = "~/vimwiki/work-wiki/" },
---     { name = "personal-wiki", path = "~/vimwiki/personal-wiki/" },
---     { name = "linux-wiki", path = "~/vimwiki/linux-wiki/" },
---     -- Add more wikis if needed
--- }
 
 function insert_date()
     local today = os.date("%Y-%m-%d")
